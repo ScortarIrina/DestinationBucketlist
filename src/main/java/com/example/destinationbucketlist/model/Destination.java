@@ -1,8 +1,6 @@
 package com.example.destinationbucketlist.model;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.MappedSuperclass;
+import jakarta.persistence.*;
 
 import java.util.Date;
 
@@ -15,7 +13,9 @@ abstract public class Destination {
     private String title;
     private String image; // this is a link or a path
     private String description;
+    @Temporal(TemporalType.DATE)
     private Date startDate;
+    @Temporal(TemporalType.DATE)
     private Date endDate;
 
     public Destination() {

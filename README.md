@@ -4,7 +4,7 @@ DestinationBucketList is an app that allows people to create a personal private 
 
 A vacation destination is a place with a geolocation, title, image, description, stay dates.
 
-Bucket list is private, each user should be able to register and add public items or create new ones privately.
+Bucket list is private, each appUser should be able to register and add public items or create new ones privately.
 
 User should be able to manage items, including removal.
 

@@ -4,16 +4,16 @@ import jakarta.persistence.Entity;
 
 @Entity
 public class PrivateDestination extends Destination {
-    private boolean isFavourite; // this marks if the destination is considered favourite or not
-                                 // to make a destination favourite see below makeFavourite()
 
-    public PrivateDestination()
-    {
+    private boolean isFavourite; // this marks if the destination is considered favourite or not
+    // to make a destination favourite see below makeFavourite()
+
+
+    public PrivateDestination() {
         isFavourite = false;
     }
 
-    public PrivateDestination(boolean fav)
-    {
+    public PrivateDestination(boolean fav) {
         isFavourite = fav;
     }
 
@@ -25,8 +25,7 @@ public class PrivateDestination extends Destination {
         isFavourite = favourite;
     }
 
-    public void makeFavourite()
-    {
+    public void makeFavourite() {
         this.isFavourite = true;
     }
 }

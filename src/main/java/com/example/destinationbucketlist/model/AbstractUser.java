@@ -1,14 +1,10 @@
 package com.example.destinationbucketlist.model;
 
-import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
+import jakarta.persistence.MappedSuperclass;
 
-@Entity
-@NoArgsConstructor
-@AllArgsConstructor
+@MappedSuperclass
 abstract public class AbstractUser {
 
     private @Id @GeneratedValue Integer id;
@@ -17,6 +13,18 @@ abstract public class AbstractUser {
     private String username;
     private String email;
     private String password;
+
+    public AbstractUser(Integer id, String firstName, String lastName, String username, String email, String password) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.username = username;
+        this.email = email;
+        this.password = password;
+    }
+
+    public AbstractUser() {
+    }
 
     public Integer getId() {
         return id;

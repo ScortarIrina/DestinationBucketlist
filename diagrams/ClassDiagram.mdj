@@ -1340,7 +1340,7 @@
 											"top": 168,
 											"width": 223,
 											"height": 13,
-											"text": "-users: List<User>",
+											"text": "-appUsers: List<User>",
 											"horizontalAlignment": 0
 										}
 									],
@@ -4659,7 +4659,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGHQZTknIv4920="
 							},
-							"name": "users",
+							"name": "appUsers",
 							"visibility": "private",
 							"type": "List<User>"
 						}

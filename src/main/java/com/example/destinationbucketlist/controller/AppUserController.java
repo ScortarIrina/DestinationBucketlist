@@ -27,4 +27,15 @@ public class AppUserController {
     void addUser(@RequestBody AppUser appUser) {
         this.appUserService.addUser(appUser);
     }
+
+    @PutMapping("/appusers/{userId}")
+    void updateUser(@RequestBody AppUser appUser, @PathVariable Integer userId) {
+        appUser.setId(userId);
+        appUserService.updateUser(appUser);
+    }
+
+    @DeleteMapping("/appusers/{userId}")
+    void deleteUser(@PathVariable Integer userId) {
+        appUserService.deleteUser(userId);
+    }
 }

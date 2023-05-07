@@ -25,11 +25,20 @@ public class AppUserService {
         return appUsers;
     }
 
+    public Optional<AppUser> getUserById(Integer userId) {
+        return appUserRepository.findById(userId);
+    }
+
     public void addUser(AppUser appUser) {
         appUserRepository.save(appUser);
     }
 
-    public Optional<AppUser> getUserById(Integer userId) {
-        return appUserRepository.findById(userId);
+    public void updateUser(AppUser appUser) {
+        appUserRepository.save(appUser);
+    }
+
+    public void deleteUser(Integer userId) {
+        AppUser appUser = getUserById(userId).orElse(null);
+        appUserRepository.delete(appUser);
     }
 }

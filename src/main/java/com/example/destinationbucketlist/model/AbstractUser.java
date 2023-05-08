@@ -7,12 +7,12 @@ import jakarta.persistence.MappedSuperclass;
 @MappedSuperclass
 abstract public class AbstractUser {
 
-    private @Id @GeneratedValue Integer id;
-    private String firstName;
-    private String lastName;
-    private String username;
-    private String email;
-    private String password;
+    protected @Id @GeneratedValue Integer id;
+    protected String firstName;
+    protected String lastName;
+    protected String username;
+    protected String email;
+    protected String password;
 
     public AbstractUser(Integer id, String firstName, String lastName, String username, String email, String password) {
         this.id = id;

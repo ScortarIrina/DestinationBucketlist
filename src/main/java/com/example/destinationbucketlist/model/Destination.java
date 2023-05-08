@@ -8,15 +8,15 @@ import java.util.Date;
 // A vacation destination is a place with a geolocation, title, image, description, stay dates.
 abstract public class Destination {
 
-    private @Id @GeneratedValue Integer destinationID;
-    private String geolocation;
-    private String title;
-    private String image; // this is a link or a path
-    private String description;
+    protected @Id @GeneratedValue Integer destinationID;
+    protected String geolocation;
+    protected String title;
+    protected String image; // this is a link or a path
+    protected String description;
     @Temporal(TemporalType.DATE)
-    private Date startDate;
+    protected Date startDate;
     @Temporal(TemporalType.DATE)
-    private Date endDate;
+    protected Date endDate;
 
     public Destination() {
     }

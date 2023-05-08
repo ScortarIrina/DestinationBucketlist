@@ -2,6 +2,8 @@ package com.example.destinationbucketlist.model;
 
 import jakarta.persistence.Entity;
 
+import java.util.Date;
+
 @Entity
 public class PrivateDestination extends Destination {
 
@@ -27,5 +29,16 @@ public class PrivateDestination extends Destination {
 
     public void makeFavourite() {
         this.isFavourite = true;
+    }
+
+    public PrivateDestination(Integer destinationID, String geolocation, String title, String image, String description, Date startDate, Date endDate, boolean isFavourite) {
+        this.destinationID = destinationID;
+        this.geolocation = geolocation;
+        this.title = title;
+        this.image = image;
+        this.description = description;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.isFavourite= isFavourite;
     }
 }

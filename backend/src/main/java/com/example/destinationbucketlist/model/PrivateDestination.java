@@ -50,7 +50,7 @@ public class PrivateDestination extends Destination {
         return "PrivateDestination{" +
                 "appUser=" + appUser +
                 ", isFavourite=" + isFavourite +
-                ", destinationID=" + destinationID +
+                ", destinationID=" + id +
                 ", geolocation='" + geolocation + '\'' +
                 ", title='" + title + '\'' +
                 ", image='" + image + '\'' +

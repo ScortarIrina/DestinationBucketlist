@@ -2,18 +2,22 @@ package com.example.destinationbucketlist.controller;
 
 import com.example.destinationbucketlist.DTOs.PrivateDestinationDTO;
 import com.example.destinationbucketlist.mapper.Mapper;
-import com.example.destinationbucketlist.model.AppUser;
 import com.example.destinationbucketlist.model.PrivateDestination;
 import com.example.destinationbucketlist.service.PrivateDestinationService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
 @RestController
 public class PrivateDestinationController {
+
+    public static int PAGE_SIZE = 100;
 
     @Autowired
     private PrivateDestinationService privateDestinationService;
@@ -23,11 +27,25 @@ public class PrivateDestinationController {
 
     // localhost:8080/privateDestinations
     @GetMapping("/privateDestinations")
-    List<PrivateDestinationDTO> getAllPrivateDestinations() {
-        return privateDestinationService.getAllPrivateDestinations()
+    ResponseEntity<Map<String, Object>> getAllPrivateDestinations(@RequestParam Optional<String> page,
+                                                           @RequestParam Optional<String> size) {
+        int p = Integer.parseInt(page.orElse("0"));
+
+        int pSize = Integer.parseInt(size.orElse("0"));
+
+        // call getAll... method from service
+        Map<String, Object> ret = privateDestinationService.getAllPrivateDestinations(p, pSize);
+
+        // map resulting Appointment entities to AppointmentDTO using the instance of the Mapper class
+        List<PrivateDestinationDTO> dtos = ((List<PrivateDestination>) ret.get("privateDestinations"))
                 .stream()
                 .map(mapper::toPrivateDestinationDTO)
                 .collect(Collectors.toList());
+
+        ret.put("privateDestinations", dtos);
+
+        // return a ResponseEntity object with a JSON response body containing a map of the results
+        return new ResponseEntity<>(ret, HttpStatus.OK);
     }
 
     // localhost:8080/privateDestinations/{id}
@@ -65,7 +83,7 @@ public class PrivateDestinationController {
     //}
     @PutMapping("/privateDestinations/{privateDestinationId}")
     void updatePrivateDestination(@RequestBody PrivateDestination privateDestination, @PathVariable Integer privateDestinationId) {
-        privateDestination.setDestinationID(privateDestinationId);
+        privateDestination.setId(privateDestinationId);
         privateDestinationService.updatePrivateDestination(privateDestination);
     }
 

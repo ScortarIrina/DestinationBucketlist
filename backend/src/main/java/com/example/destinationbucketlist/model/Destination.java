@@ -8,7 +8,7 @@ import java.util.Date;
 // A vacation destination is a place with a geolocation, title, image, description, stay dates.
 abstract public class Destination {
 
-    protected @Id @GeneratedValue Integer destinationID;
+    protected @Id @GeneratedValue Integer id;
     protected String geolocation;
     protected String title;
     protected String image; // this is a link or a path
@@ -21,8 +21,8 @@ abstract public class Destination {
     public Destination() {
     }
 
-    public Destination(Integer destinationID, String geolocation, String title, String image, String description, Date startDate, Date endDate) {
-        this.destinationID = destinationID;
+    public Destination(Integer id, String geolocation, String title, String image, String description, Date startDate, Date endDate) {
+        this.id = id;
         this.geolocation = geolocation;
         this.title = title;
         this.image = image;
@@ -31,12 +31,12 @@ abstract public class Destination {
         this.endDate = endDate;
     }
 
-    public Integer getDestinationID() {
-        return destinationID;
+    public Integer getId() {
+        return id;
     }
 
-    public void setDestinationID(Integer destinationID) {
-        this.destinationID = destinationID;
+    public void setId(Integer destinationID) {
+        this.id = destinationID;
     }
 
     public String getGeolocation() {

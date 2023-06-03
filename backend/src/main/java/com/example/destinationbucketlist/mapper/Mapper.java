@@ -27,7 +27,7 @@ public class Mapper {
     }
 
     public PrivateDestinationDTO toPrivateDestinationDTO(PrivateDestination privateDestination) {
-        return new PrivateDestinationDTO(privateDestination.getDestinationID(),
+        return new PrivateDestinationDTO(privateDestination.getId(),
                 privateDestination.getTitle(),
                 privateDestination.getGeolocation(),
                 privateDestination.getImage(),

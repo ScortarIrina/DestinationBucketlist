@@ -31,6 +31,7 @@ public class Mapper {
                 privateDestination.getTitle(),
                 privateDestination.getGeolocation(),
                 privateDestination.getImage(),
+                privateDestination.getDescription(),
                 privateDestination.getStartDate().toString(),
                 privateDestination.getEndDate().toString());
     }

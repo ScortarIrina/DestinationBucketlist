@@ -16,7 +16,7 @@ public class PublicDestination extends Destination{
     public PrivateDestination makePrivate(AppUser user)
     {
         PrivateDestination destination = new PrivateDestination();
-        destination.setDestinationID(this.destinationID);
+        destination.setId(this.id);
         destination.setDescription(this.description);
         destination.setGeolocation(this.geolocation);
         destination.setImage(this.image);

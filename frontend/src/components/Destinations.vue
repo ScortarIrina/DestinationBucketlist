@@ -127,7 +127,7 @@
 
           <div class="form-control">
             <label>Image: </label>
-            <input type="text" v-model="clickedPrivateDestination.imag" id="image"
+            <input type="text" v-model="clickedPrivateDestination.image" id="image"
                    placeholder="Enter destination image link"/>
           </div>
 

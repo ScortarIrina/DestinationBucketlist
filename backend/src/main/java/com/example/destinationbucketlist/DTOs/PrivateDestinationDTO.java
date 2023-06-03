@@ -6,16 +6,26 @@ public class PrivateDestinationDTO {
     private String title;
     private String geolocation;
     private String image;
+    private String description;
     private String startDate;
     private String endDate;
 
-    public PrivateDestinationDTO(Integer id, String title, String geolocation, String image, String startDate, String endDate) {
+    public PrivateDestinationDTO(Integer id, String title, String geolocation, String image, String description, String startDate, String endDate) {
         this.id = id;
         this.title = title;
         this.geolocation = geolocation;
+        this.description = description;
         this.image = image;
         this.startDate = startDate;
         this.endDate = endDate;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public Integer getId() {

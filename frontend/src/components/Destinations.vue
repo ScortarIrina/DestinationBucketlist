@@ -8,11 +8,11 @@
             <thead>
             <tr>
               <input type="button" value="Update private destination" class="btn btn-primary"
-                     @click="showModalClicked(this.clickedDog, false, true, false, false)"/>
+                     @click="showModalClicked(this.clickedPrivateDestination, false, true, false, false)"/>
               <input type="button" value="Create private destination" class="btn btn-primary"
-                     @click="showModalClicked(this.clickedDog, false, false, true, false)"/>
+                     @click="showModalClicked(this.clickedPrivateDestination, false, false, true, false)"/>
               <input type="button" value="Delete private destination" class="btn btn-primary"
-                     @click="showModalClicked(this.clickedDog, false, false, false, true)"/>
+                     @click="showModalClicked(this.clickedPrivateDestination, false, false, false, true)"/>
             </tr>
             <tr>
               <th>

@@ -1,38 +1,43 @@
 package com.example.destinationbucketlist.mapper;
 
-import com.example.destinationbucketlist.DTOs.AppUserDTO;
-import com.example.destinationbucketlist.DTOs.PrivateDestinationDTO;
-import com.example.destinationbucketlist.model.AppUser;
-import com.example.destinationbucketlist.model.PrivateDestination;
+import com.example.destinationbucketlist.DTOs.DestinationDTO;
+import com.example.destinationbucketlist.DTOs.UserDTO;
+import com.example.destinationbucketlist.model.AuthUser;
+import com.example.destinationbucketlist.model.Destination;
 import org.springframework.stereotype.Component;
 
-import java.util.List;
-
-import static java.util.stream.Collectors.toList;
+import java.text.SimpleDateFormat;
 
 @Component
 public class Mapper {
 
-    public AppUserDTO toAppUserDTO(AppUser appUser) {
-        List<String> destinationNames = appUser.getPrivateDestinations()
-                .stream()
-                .map(PrivateDestination::getTitle)
-                .collect(toList());
+//    public UserDTO toUserDTO(AuthUser authUser) {
+//        List<String> destinationNames = authUser.getDestinations()
+//                .stream()
+//                .map(Destination::getTitle)
+//                .collect(toList());
+//
+//        return new UserDTO(authUser.getId(),
+//                authUser.getFirstName(),
+//                authUser.getLastName(),
+//                authUser.getEmail(),
+//                destinationNames);
+//    }
 
-        return new AppUserDTO(appUser.getId(),
-                appUser.getFirstName(),
-                appUser.getLastName(),
-                appUser.getEmail(),
-                destinationNames);
+    public DestinationDTO toDestinationDTO(Destination destination) {
+        return new DestinationDTO(destination.getId(),
+                destination.getTitle(),
+                destination.getGeolocation(),
+                destination.getImage(),
+                destination.getDescription(),
+                destination.getStartDate().toString(),
+                destination.getEndDate().toString(),
+                destination.isPublished());
     }
 
-    public PrivateDestinationDTO toPrivateDestinationDTO(PrivateDestination privateDestination) {
-        return new PrivateDestinationDTO(privateDestination.getId(),
-                privateDestination.getTitle(),
-                privateDestination.getGeolocation(),
-                privateDestination.getImage(),
-                privateDestination.getDescription(),
-                privateDestination.getStartDate().toString(),
-                privateDestination.getEndDate().toString());
+    public UserDTO toUserDTO(AuthUser user) {
+        return new UserDTO(user.getId(), user.getUsername(), user.getPassword(), user.getProfile(), user.getFirstName(),
+                user.getLastName(), user.getLocation(), new SimpleDateFormat("dd/MM/YYYY").format(user.getBirthday()), user.getGender(),
+                user.getMaritalStatus(), user.getStatus(), user.getAuthCode().getId());
     }
 }

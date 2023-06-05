@@ -1,6 +1,6 @@
 package com.example.destinationbucketlist.DTOs;
 
-public class PrivateDestinationDTO {
+public class DestinationDTO {
 
     private Integer id;
     private String title;
@@ -10,7 +10,12 @@ public class PrivateDestinationDTO {
     private String startDate;
     private String endDate;
 
-    public PrivateDestinationDTO(Integer id, String title, String geolocation, String image, String description, String startDate, String endDate) {
+    private String username;
+
+    private boolean published;
+
+    public DestinationDTO(Integer id, String title, String geolocation, String image,
+                          String description, String startDate, String endDate, boolean published) {
         this.id = id;
         this.title = title;
         this.geolocation = geolocation;
@@ -18,6 +23,7 @@ public class PrivateDestinationDTO {
         this.image = image;
         this.startDate = startDate;
         this.endDate = endDate;
+        this.published = published;
     }
 
     public String getDescription() {
@@ -74,5 +80,21 @@ public class PrivateDestinationDTO {
 
     public void setEndDate(String endDate) {
         this.endDate = endDate;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public boolean isPublished() {
+        return published;
+    }
+
+    public void setPublished(boolean published) {
+        this.published = published;
     }
 }

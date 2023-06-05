@@ -2,19 +2,19 @@ General information about the structure of the project:
 Database: PostgreSQL
 Language : Java ( framework ->  SpringBoot)
 Java version : 17
-Frontend languages: Vue.js / React
+Frontend languages: Vue.js
 
 
 
 Details about implementation (which may not be included in the schema):
-Methods to choose a destination(as a appUser) : favorites(of other appUsers) or any destination from public list
+Methods to choose a destination (as a appUser) : favorites (of other appUsers) or any destination from public list
 Public destination -> private destination: transformation function ( by creating a new private dest. with values from the public one)
 
 
 Milestones to reach per lab:
 Lab 5
 Finish conceptual model
--Add new stuff  if necessary
+- Add new stuff  if necessary
 Build all related to backend ( with/ without choosing from favorites of other appUsers )
 Tasks:
 1.	Basic stuff: Abstract User, User and Admin + Destination – implement and put them in repo and manage requests
@@ -22,7 +22,6 @@ Tasks:
 3.	Public List and Destination  – implement and put them in repo and manage requests
 4.	Mechanism for choosing from list : circular (?) or choose from what is shown ( not decided yet)
 5.	Add to private list from public list
-6.
 
 
 

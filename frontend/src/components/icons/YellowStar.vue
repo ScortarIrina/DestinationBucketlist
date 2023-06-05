@@ -1,0 +1,6 @@
+<template>
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20">
+    <title>YellowStar</title>
+    <path d="M20 7h-7L10 .5 7 7H0l5.46 5.47-1.64 7 6.18-3.7 6.18 3.73-1.63-7z" id="path4" style="fill:#ffcc33;fill-opacity:1" />
+  </svg>
+</template>

@@ -650,7 +650,7 @@ export default {
 
     showModalClickedDestinations(destination, lClicked, uClicked, cClicked, dClicked) {
       if (this.userAuthenticated) {
-        if (this.currentUser.username === destination.username) {
+        if (destination.id === ""|| this.currentUser.username === destination.username) {
           this.clickedDestination = destination;
           this.listDestinationsClicked = lClicked;
           this.updateDestinationClicked = uClicked;
